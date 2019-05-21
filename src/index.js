@@ -15,10 +15,13 @@ const taskB = r => {
   });
 };
 
-const p = taskA();
+const p1 = taskA();
+const p2 = taskB();
 
-p.then(r => taskB(r))
-  .then(x => console.log(x))
-  .catch(err => console.err("e=>", err));
+Promise.all([p1, p2]).then(r => console.log(r));
 
-console.log(p);
+// p.then(r => taskB(r))
+//   .then(x => console.log(x))
+//   .catch(err => console.err("e=>", err));
+
+// console.log(p);
