@@ -4,7 +4,8 @@ function* foo() {
   // yield 30;
   let num = 0;
   while (true) {
-    yield ++num;
+    const r = yield ++num;
+    console.log("r =>", r);
   }
   // return 100;
 }
@@ -12,5 +13,5 @@ function* foo() {
 const result = foo();
 
 console.log(result.next());
-console.log(result.next());
-console.log(result.next());
+console.log(result.next("A"));
+console.log(result.next("B"));
