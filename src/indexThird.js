@@ -6,8 +6,18 @@ const foo = () => {
   });
 };
 
-async function main() {
-  const result = await foo();
+// async function main() {
+//   const result = await foo();
+//   console.log(result);
+// }
+// main();
+
+// to generator
+
+function* main() {
+  const result = yield foo();
   console.log(result);
 }
-main();
+
+const it = main();
+it.next().value.then(r => it.next(r));
