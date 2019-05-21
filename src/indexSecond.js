@@ -1,7 +1,12 @@
 function* foo() {
-  yield 10;
-  yield;
-  return 100;
+  // yield 10;
+  // yield 20;
+  // yield 30;
+  let num = 0;
+  while (true) {
+    yield ++num;
+  }
+  // return 100;
 }
 
 const result = foo();
