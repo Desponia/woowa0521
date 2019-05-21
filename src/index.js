@@ -9,6 +9,6 @@ const foo = cb => {
 
 const p = foo();
 
-p.then(r => console.log(r), err => console.error(err));
+p.then(r => console.log(r)).catch(err => console.err("e=>", err));
 
 console.log(p);
